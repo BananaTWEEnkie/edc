@@ -35,7 +35,7 @@ p.error {
 }
 
 #code-of-the-day {
-		margin-left: 100px;
+		margin-left: 20%;
     display:block;
     overflow:hidden;
     padding: 10px 0 10px 0;
@@ -54,5 +54,5 @@ h3 {
 }
 
 #more {
-	margin-left: 100px;
+	margin-left: 20%;
 }

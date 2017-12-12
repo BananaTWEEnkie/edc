@@ -27,7 +27,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-		<div id="code-of-the-day" class="container">
+		<div id="contest" class="container">
 			<div class="row justify-content-md-center">
 				<div class="col-sm">
 					<h2>code of the day</h2>

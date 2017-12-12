@@ -2,6 +2,7 @@
 	include 'answer_controller.php';
 	include 'question_controller.php';
 	include 'past_winners.php';
+	include 'question_of_the_day.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,18 +50,10 @@
 						<form method="post" action="">
 							<b>Question:</b> What does this code do?
 							<div id="code-of-the-day">
-								def what( x, n ):<br>
-										if n < 0:         <br>
-												n = -n         <br>
-												x = 1.0 / x     <br>
-										z = 1.0    <br>
-										while n > 0:<br>
-												if n % 2 == 1: <br>
-														z *= x <br>
-												x *= x <br>
-												n /= 2 <br>
-										return z<br>
-								</div>
+								<?php 
+									echo $displayQuestionOfTheDay;
+								?>
+							</div>
 							<center>
 							<textarea name="submit-answer" id="submit-answer" placeholder="answer..." rows="4" cols="50"></textarea>
 							<p><b>Submit to rate answer</b></p>

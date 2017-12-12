@@ -22,7 +22,6 @@ if(isset($_POST['answerSubmission'])) { //check if form was submitted
 		if ($result->num_rows > 0) {
 			//output data of each row
 			while($row = $result->fetch_assoc()) {
-					echo '<script>console.log("$input")</script>';
 				$displayAnswer .= "<div class='content'>
 														<b><a href='viewuser.php?u=".$row["userId"]."'>".$row["userId"]."</a> posted answer on ".$row["timestamp"].":</b>"
 													 ."<p class='margin'><i>".$row["answer"]."</i></p>"

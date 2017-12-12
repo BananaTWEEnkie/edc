@@ -2,7 +2,7 @@
 
 include 'connect.php';
 
-//Order by recency
+//Order by recenccy
 $sql = "SELECT * FROM questions ORDER BY rating DESC, timestamp DESC";
 $result = $conn->query($sql);
 
@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
 													<b><a href='viewuser.php?u=".$row["userId"]."'>".$row["userId"]."</a> posted question on ".$row["timestamp"].":</b>"
 												 ."<p class='margin'><i>".$row["question"]."</i></p>"
 												 ."<b>Rated: </b>".$row["rating"]."/5<br>"
-												 ."<input type='checkbox' id='postQuestion[]' value='".$row['questionId']."'>
+												 ."<input type='checkbox' name='postQuestion[]' value='".$row['questionId']."'>
 													 <label for='postQuestion[]'>Post this question</label>
 													 </div>";
 	}
@@ -26,12 +26,11 @@ if (isset($_POST['question-selection'])) {
 	if(!empty($_POST['postQuestion'])) {
 		//Loop to store and display values of individual checked checkbox
 		foreach($_POST['postQuestion'] as $questionId){
-			$queryPosted = "UPDATE answers SET posted=1 WHERE questionId=$questionId"; 
-			
-			if(mysqli_query($conn, $queryWinner)) {
+			$queryPosted = "UPDATE questions SET posted=1 WHERE questionId=$questionId"; 
+			if(mysqli_query($conn, $queryPosted)) {
 				echo "Question posted";
 			} else {
-				echo "There was an error submitting your winners";
+				echo "There was an error submitting questions";
 			}
 		}
 	}

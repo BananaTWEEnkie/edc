@@ -2,6 +2,7 @@
 
 include 'connect.php';
 
+//order by recentcy
 $sql = "SELECT * FROM answers ORDER BY rating DESC, timestamp DESC";
 $result = $conn->query($sql);
 
@@ -9,7 +10,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	//output data of each row
 	while($row = $result->fetch_assoc()) {
-		//check to see if an answer is already declared winner. If it hasn't, moderator and view it.
+		//check to see if an answer is already declared winner. If it hasn't, moderater can view it
 		if($row['winner']== false) {
 			$displayAnswer .= "<div class='content'>
 														<b><a href='viewuser.php?u=".$row["userId"]."'>".$row["userId"]."</a> posted answer on ".$row["timestamp"].":</b>"
