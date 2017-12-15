@@ -48,6 +48,7 @@
 				<div class="row">
 					<div class="col-sm">
 						<form method="post" action="">
+							<!-- <input type="hidden" name="user_id" value=""> -->
 							<b>Question:</b> What does this code do?
 							<div id="code-of-the-day">
 								<?php 
@@ -75,6 +76,7 @@
 						<div class="row">
 							<div class="col-sm">
 								<form method="post" action="">
+								<!-- <input type="hidden" name="user_id" value=""> -->
 									<center>
 									<h3>Submit question</h3>
 									<textarea name="submit-question" id="submit-question" placeholder="submit new question" rows="4" cols="50"></textarea>

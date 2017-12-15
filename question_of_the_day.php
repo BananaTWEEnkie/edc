@@ -2,8 +2,8 @@
 
 include 'connect.php';
 
-$questionOfTheDay = "62";
-$sql = "SELECT question FROM questions WHERE questionId=$questionOfTheDay"; //replace the values
+$questionOfTheDay = "1";
+$sql = "SELECT question FROM questions WHERE question_id=".$questionOfTheDay; //replace the values
 
 $result = mysqli_query($conn, $sql);
 
