@@ -29,6 +29,7 @@
 		<script src="https://use.fontawesome.com/68d0806e1b.js"></script>
 	</head>
 	<body>
+			<center><p>><a href="../edc/moderator_page.php">Moderator Page</a></p></center>
 			<div id="contest" class="container">
 				<div class="row justify-content-md-center">
 					<div class="col-sm">
@@ -86,7 +87,10 @@
 									</center>
 									<!-- Once user submits a question, they can rate other submissions -->
 									<div class="containers">
-										<?php echo $displayQuestion; ?>
+										<?php echo "
+														 <p align='right'><a href='#' class='comment-box'>Comment</a></p>
+															</div>";
+										echo $displayQuestion; ?>
 									</div>
 								</form>
 							</div>

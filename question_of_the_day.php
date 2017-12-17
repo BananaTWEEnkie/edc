@@ -2,9 +2,7 @@
 
 include 'connect.php';
 
-$questionOfTheDay = "1";
-$sql = "SELECT question FROM questions WHERE question_id=".$questionOfTheDay; //replace the values
-
+$sql = "SELECT question FROM questions WHERE posted = 1";
 $result = mysqli_query($conn, $sql);
 
 while ($row = $result->fetch_assoc()) {

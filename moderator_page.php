@@ -1,9 +1,7 @@
 <?php
 	include 'moderate_answers.php';
 	include 'moderate_questions.php';
-	
-	//create your own question display. Later replaced to pull from database question by Id
-	$questionOfTheDay;
+	include 'question_of_the_day.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +25,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 	</head>
 	<body>
+		<center><p>><a href="../edc/code_of_the_day.php">Code of the Day Page</a></p></center>
 		<div id="contest" class="container">
 			<div class="row justify-content-md-center">
 				<div class="col-sm">
@@ -47,6 +46,13 @@
 			<div class="row justify-content-md-center">
 				<div class="col-sm">
 					<h3>Moderate answers</h3>
+					<b>code of the day:</b>
+					<div id="code-of-the-day">
+						<?php echo $displayQuestionOfTheDay; ?>
+					</div>
+					<b>Directions:</b>
+					Choose the winner(s) who answered correctly for the code of the day (see above).
+					<p></p>
 					<form method="post"action="">
 						<?php echo $displayAnswer; ?>
 						<p> <input type="submit" value="Submit" name="winner-selection"> </p>
@@ -54,6 +60,9 @@
 				</div>
 				<div class="col-sm">
 					<h3>Moderate questions</h3>
+					<b>Directions:</b>
+					Choose only one to post the next question for "Code of the day".
+					<p></p>
 					<form method="post" action="">
 						<?php echo $displayQuestion; ?>
 						<p> <input type="submit" value="Submit" name="question-selection"> </p>
@@ -62,8 +71,7 @@
 			</div>
 		</div>
 		</div>
-		<script>
-			
-		</script>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>

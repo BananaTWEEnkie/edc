@@ -13,6 +13,7 @@ if(isset($_POST['questionSubmission'])) { //check if form was submitted
 	$input = mysqli_real_escape_string($conn, $input);
 	//create SQL statement to insert acquired question submitted by user into the database
 	$query = "INSERT INTO questions (question, user_id) VALUES ('".$input."', '54323')";
+	//check to see if insert statement worked
 	if(mysqli_query($conn, $query)) {
 		$sql = "SELECT q.*, qr.user_rating, qc.comment, u.username FROM questions q LEFT JOIN questions_ratings qr ON (q.question_id=qr.question_id) LEFT JOIN questions_comments qc ON (q.question_id=qc.question_id) LEFT JOIN users u ON (q.user_id=u.user_id) WHERE q.question_id < (SELECT MAX(question_id) FROM questions) AND q.posted=0";
 		$result = $conn->query($sql);
