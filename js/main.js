@@ -46,13 +46,23 @@ $(document).ready(function() {
     }
 	});
 	// When user clicks on comment link, a text box will appear along with a submit comment button
-	$('a.comment-box').click(function(){
+	$('a.answer-comment-box').click(function(){
+		event.preventDefault();
+		var $parent = $(this).closest('div');
+		var $data = $('.answer-comment-box').data('pass');
+
+		$parent.append("<form method='post' action=''><p align='right'><textarea name='comment-text' placeholder='Add comment here' rows='3' cols='50'></textarea><br><input type='submit' value='Submit Comment' name='answerCommentSubmission'></input></p></form>");		
+		$(".answer-comment-box").text('');
+	});
+
+	$('a.question-comment-box').click(function(){
 		event.preventDefault();
 		var $parent = $(this).closest('div');
 		
-		$parent.append("<form method='post' action=''><p align='right'><textarea name='comment-text' placeholder='Add comment here' rows='3' cols='50'></textarea><br><input type='button' value='Submit Comment' name='commentSubmission'></input></p>");
-		$(".comment-box").text('');
+		$parent.append("<form method='post' action=''><p align='right'><textarea name='comment-text' placeholder='Add comment here' rows='3' cols='50'></textarea><br><input type='submit' value='Submit Comment' name='questionCommentSubmission'></input></p></form>");
+		$(".question-comment-box").text('');
 	});
+
 	// the selector will match all input controls of type :checkbox
 	// and attach a click event handler 
 	$("input:checkbox").on('click', function() {
@@ -70,5 +80,19 @@ $(document).ready(function() {
 			$box.prop("checked", false);
 		}
 	});
+
+	$('.answerCommentSubmission').click(function (e) {
+		$.ajax({
+			url: comment_controller.php,
+			dataType: 'html',
+			type: 'POST',
+			success: function(data) {
+				console.log(data);
+			},
+			error: function () {
+				console.log('error');
+			}
+		})
+	})
 }); 
 

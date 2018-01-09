@@ -1,6 +1,7 @@
 <?php
 	include 'answer_controller.php';
 	include 'question_controller.php';
+	include 'comment_controller.php';
 	include 'past_winners.php';
 	include 'question_of_the_day.php';
 ?>
@@ -62,9 +63,9 @@
 							<input type="submit" value="Submit Answer" name="answerSubmission" id="answerSubmission" disabled>
 							<p> </p>
 							</center>
-							<!-- Once user submits an answer, they can view, comment and rate other people's answers  -->
-							<?php echo $displayAnswer;	?>
-						</form>
+            </form>
+            <!-- Once user submits an answer, they can view, comment and rate other people's answers  -->
+            <?php echo $displayAnswer;	?>
 					</div>
 					<div class="col-sm">
 						<div class="row">
@@ -85,20 +86,16 @@
 									<input type="submit" value="Submit Questions" name="questionSubmission" id="questionSubmission" disabled>
 									<p></p>
 									</center>
-									<!-- Once user submits a question, they can rate other submissions -->
-									<div class="containers">
-										<?php echo "
-														 <p align='right'><a href='#' class='comment-box'>Comment</a></p>
-															</div>";
-										echo $displayQuestion; ?>
-									</div>
-								</form>
+                                </form>
+                                <!-- Once user submits a question, they can rate other submissions -->
+                                <div class="containers">
+                                    <?php echo $displayQuestion; ?>
+                                </div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</form>
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>

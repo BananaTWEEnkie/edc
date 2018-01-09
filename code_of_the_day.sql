@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 15, 2017 at 06:05 AM
+-- Generation Time: Dec 18, 2017 at 06:28 AM
 -- Server version: 5.7.20
 -- PHP Version: 7.1.12
 
@@ -59,6 +59,13 @@ CREATE TABLE `answers_comments` (
   `comment` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `answers_comments`
+--
+
+INSERT INTO `answers_comments` (`answer_comment_id`, `user_id`, `answer_id`, `comment`) VALUES
+(1, 54323, 1, 'Wow, I wouldn\'t have gotten that.');
+
 -- --------------------------------------------------------
 
 --
@@ -69,8 +76,15 @@ CREATE TABLE `answers_ratings` (
   `answer_rating_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `answer_id` int(11) NOT NULL,
-  `user_rating` int(11) NOT NULL DEFAULT '0'
+  `user_rating` int(11) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `answers_ratings`
+--
+
+INSERT INTO `answers_ratings` (`answer_rating_id`, `user_id`, `answer_id`, `user_rating`) VALUES
+(1, 54323, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -91,8 +105,8 @@ CREATE TABLE `questions` (
 --
 
 INSERT INTO `questions` (`question_id`, `user_id`, `question`, `timestamp`, `posted`) VALUES
-(1, 54321, '						def what( x, n ):<br>\r\n										if n < 0:         <br>\r\n												n = -n         <br>\r\n												x = 1.0 / x     <br>\r\n										z = 1.0    <br>\r\n										while n > 0:<br>\r\n												if n % 2 == 1: <br>\r\n														z *= x <br>\r\n												x *= x <br>\r\n												n /= 2 <br>\r\n										return z<br>', '2017-12-15 11:22:46', 1),
-(2, 54322, '										public class HelloWorld\r\n{ <br>\r\n	public static void main(String[] args) { <br>\r\n		System.out.println(\"Hello World!\");<br>\r\n	}<br>\r\n', '2017-12-15 11:22:46', 0);
+(1, 54321, '						def what( x, n ):<br>\r\n										if n < 0:         <br>\r\n												n = -n         <br>\r\n												x = 1.0 / x     <br>\r\n										z = 1.0    <br>\r\n										while n > 0:<br>\r\n												if n % 2 == 1: <br>\r\n														z *= x <br>\r\n												x *= x <br>\r\n												n /= 2 <br>\r\n										return z<br>', '2017-12-18 11:13:46', 1),
+(2, 54322, '										public class HelloWorld\r\n{ <br>\r\n	public static void main(String[] args) { <br>\r\n		System.out.println(\"Hello World!\");<br>\r\n	}<br>\r\n', '2017-12-18 11:13:46', 0);
 
 -- --------------------------------------------------------
 
@@ -212,25 +226,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `answers_comments`
 --
 ALTER TABLE `answers_comments`
-  MODIFY `answer_comment_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `answers_ratings`
 --
 ALTER TABLE `answers_ratings`
-  MODIFY `answer_rating_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_rating_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
 -- AUTO_INCREMENT for table `questions_ratings`

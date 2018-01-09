@@ -28,9 +28,9 @@ if (isset($_POST['question-selection'])) {
 		foreach($_POST['postQuestion'] as $questionId){
 			//Set all posted to 0 value 
 			$queryPosted = "UPDATE questions SET posted = 0; UPDATE questions SET posted = 1 WHERE question_id=".$questionId.";";  //the question for code of the day changes to selected by moderator
-var_dump($queryPosted);
+
 			if(mysqli_multi_query($conn, $queryPosted)) {
-				echo "Question posted";
+				echo "<p class='center'>Question posted</p>";
 			} else {
 				echo "There was an error submitting questions";
 			}

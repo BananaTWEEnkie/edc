@@ -24,8 +24,9 @@ if(isset($_POST['questionSubmission'])) { //check if form was submitted
 				$displayQuestion .= "<div class='content'>
 															<b><a href='viewuser.php?u=".$row["user_id"]."'>".$row["username"]."</a> posted question on ".$row["timestamp"].":</b>"
 														 ."<p class='margin'><i>".$row["question"]."</i></p>"
-														 ."<b>Rated: </b>".$row["rating"]."/5<br>"
-														 ."<p align='right'><a href='#' class='comment-box'>Comment</a></p>
+														 ."<b>Rated: </b>".$row["user_rating"]."/5<br>"
+                                                         ."<div class='rating'><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div>"
+														 ."<p align='right'><a href='#' class='question-comment-box' data-pass='".$row["question_id"]."'>Comment</a></p>
 															</div>";
 															
 				if($row["comment"] != NULL) {

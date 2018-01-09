@@ -2,7 +2,7 @@
 
 include 'connect.php';
 
-//order by recentcy
+//order by recency
 $sql = "SELECT a.*, ar.user_rating, u.username FROM answers a LEFT JOIN answers_ratings ar ON (a.answer_id=ar.answer_id) LEFT JOIN users u ON (a.user_id=u.user_id) ORDER BY user_rating DESC, timestamp DESC";
 $result = $conn->query($sql);
 
@@ -10,7 +10,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	//output data of each row
 	while($row = $result->fetch_assoc()) {
-		//check to see if an answer is already declared winner. If it hasn't, moderater can view it
+		//check to see if an answer is already declared winner. If it hasn't, moderator can view it
 		if($row['winner']== false) {
 			$displayAnswer .= "<div class='content'>
 														<b><a href='viewuser.php?u=".$row["user_id"]."'>".$row["username"]."</a> posted answer on ".$row["timestamp"].":</b>"

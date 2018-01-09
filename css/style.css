@@ -1,11 +1,37 @@
+/* Initial settings */
 body {
 	margin: 25px;
 	padding: 25px;
 }
 
+h2 {
+	color: red;
+}
+
+h3 {
+	color: #990000;
+}
+
+/* Test settings */
+
 .center {
 	text-align:center;
 }
+
+p.margin {
+	margin-top: 1rem;
+}
+
+p.error {
+	margin-top: 1rem;
+	color: red;
+}
+
+.right-justify {
+	text-align: right;
+}
+
+/* Other settings */
 
 .container {
 	padding: 10px;
@@ -16,15 +42,6 @@ body {
 	border: 1px solid #939393;
 	margin: 20px 0 20px 0;
 	padding: 0 10px 0 10px;
-}
-
-p.margin {
-	margin-top: 1rem;
-}
-
-p.error {
-	margin-top: 1rem;
-	color: red;
 }
 
 #contest {
@@ -41,18 +58,23 @@ p.error {
     padding: 10px 0 10px 0;
 }
 
-h2 {
-	color: red;
-}
-
-h3 {
-	color: #990000;
-}
-
-.right-justify {
-	text-align: right;
-}
-
 #more {
 	margin-left: 20%;
+}
+
+/* Ratings */
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
 }
