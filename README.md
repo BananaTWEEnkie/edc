@@ -4,7 +4,13 @@ Stands for Evans Data Corp. I was assigned to create a new feature for their web
 
 ### Description
 
-I was given a task by Evans Data Corp to create a feature called "Code of the Day", a user-based daily coding challenge. Users must be logged in and register in order to participate. Users can either answer the current coding challenge of the day (created by other registered users) and/or submit their own code for others to solve.
+I was given a task by Evans Data Corp to create a feature called "Code of the Day", a user-based daily coding challenge. Users must be logged in and register in order to participate.
+
+Users can:
+* Submit their answer to the current coding challenge of the day (created by other registered users)
+* Submit their own code for others to solve
+* Comment on other submissions (can only be seen if they participated)
+* Rate other users' answers and codes
 
 ### Softwares/Websites Used
 
